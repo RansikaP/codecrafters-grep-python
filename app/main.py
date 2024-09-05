@@ -28,7 +28,7 @@ def backreference(input, pattern):
     count = re.findall(r'\\\d+', pattern)[0]
     count = count[1:]
 
-    if ',' not in pattern:
+    if ',' in pattern:
         pattern_split = pattern.split(',')
         input_split = input.split(',')
 
