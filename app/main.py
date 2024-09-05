@@ -35,7 +35,7 @@ def backreference(input, pattern):
         
         if len(input_split) == len(pattern_split):
             for i in range(len(input_split)):
-                if match_d_an_cg(input_split(i), pattern_split(i)) == 1:
+                if match_d_an_cg(input_split[i], pattern_split[i]) == 1:
                     return 1
             
 
