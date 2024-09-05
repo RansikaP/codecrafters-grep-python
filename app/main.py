@@ -27,7 +27,7 @@ def backreference(input, pattern):
     patterns = pattern.split(')')
     ref = patterns[0] + ')'
     count = re.findall(r'\\\d+', pattern)[0]
-    count = count[1:]
+    count = int(count[1:])
 
     if ',' in pattern:
         pattern_split = pattern.split(',')[1].split(' ')
@@ -39,8 +39,9 @@ def backreference(input, pattern):
                     return 1            
 
     matches = re.findall(ref, input)
-    print(matches)
-    if int(count) + 1 == len(matches):
+    if '^' not in ref:
+        count += 1
+    if count == len(matches):
         return 0
     else: return 1
     
