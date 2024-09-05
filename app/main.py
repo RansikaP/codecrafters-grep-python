@@ -27,7 +27,7 @@ def backreference(input, pattern):
     print(patterns[0][1:len(patterns[0])-1])
     matches = re.findall(patterns[0][1:len(patterns[0])-1], input)
     patterns[2] = patterns[2]
-    if int(patterns[2][1:]) == (matches.count() + 1):
+    if int(patterns[2][1:]) == len(matches) + 1:
         return 0
     else: return 1
     
