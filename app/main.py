@@ -39,6 +39,7 @@ def backreference(input, pattern):
                     return 1            
 
     matches = re.findall(ref, input)
+    print(matches)
     if int(count) + 1 == len(matches):
         return 0
     else: return 1
