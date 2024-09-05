@@ -23,8 +23,8 @@ def combined_char(input, pattern):
     return 0
 
 def backreference(input, pattern):
-    word_ref = pattern.split(')')
-    word_ref = word_ref[0][0:].translate('(')
+    word_ref = pattern.split(')')[0][1:]
+    # word_ref = word_ref[0][1:]
     print(word_ref)
 
     # matches = re.findall(patterns[0][1:len(patterns[0])-1], input)
