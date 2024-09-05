@@ -37,13 +37,12 @@ def main():
     print("Logs from your program will appear here!")
 
     # Uncomment this block to pass the first stage
-    if pattern.count('\\') > 1:
+    if re.search('\\\{d}', pattern):
+        print('here')
+    elif pattern.count('\\') > 1:
         exit(combined_char(input_line, pattern))
-    # else pattern.startswith('\\') or re.search("^\[.*\]$", pattern) or pattern.startswith('^') or pattern.endswith('$'):
     else:
         exit(match_d_an_cg(input_line, pattern))
-    # elif match_pattern(input_line, pattern):
-    #     exit(0)
     
     exit(1)
 
