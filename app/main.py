@@ -28,10 +28,10 @@ def backreference(input, pattern):
     count = pattern.split(' ')[-1][1:]
     print(count)
 
-    # matches = re.findall(patterns[0][1:len(patterns[0])-1], input)
-    # if int(patterns[2][1:]) + 1 == len(matches):
-    #     return 0
-    # else: return 1
+    matches = re.findall(ref, input)
+    if int(count) + 1 == len(matches):
+        return 0
+    else: return 1
     
 def main():
     pattern = sys.argv[2]
