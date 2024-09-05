@@ -31,7 +31,8 @@ def main():
     # Uncomment this block to pass the first stage
     if pattern.count('\\') > 1:
         for i, c in enumerate(pattern):
-            print(pattern[i])
+            if c == '\\':
+                print(c + pattern[i+1])
     elif pattern.startswith('\\') or re.search("^\[.*\]$", pattern):
         exit(match_d_an_cg(input_line, pattern))
     elif match_pattern(input_line, pattern):
