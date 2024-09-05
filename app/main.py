@@ -16,6 +16,7 @@ def match_d_an_cg(input, pattern):
 
 def combined_char(input, pattern):
     digits = '\\d' + '{' + str(pattern.count('\\d')) + '}'
+    print(digits)
     letters = r'\\d' + '{' + str(pattern.count('\\w')) + '}'
     input_n = input
     if pattern.count('\\d') > 0:        
