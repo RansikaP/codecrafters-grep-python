@@ -17,6 +17,9 @@ def match_d_an_cg(input, pattern):
 def combined_char(input, pattern):
     patterns = pattern.split(' ')
     print(patterns)
+    for p in patterns:
+        if not re.search(p, input):
+            return 1
     
     return 0
     
