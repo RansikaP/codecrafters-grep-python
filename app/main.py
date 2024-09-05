@@ -14,6 +14,13 @@ def match_pattern(input_line, pattern):
 def match_d_an_cg(input, pattern):
     return 0 if re.search (pattern, input) else 1
 
+def combined_char(input, pattern):
+    digits = pattern.count('\\d')
+    letters = pattern.count('\\w')
+    print(digits, letters)
+    if digits > 0 and match_d_an_cg('\d' + '{' + digits + '}', input) == 1:
+        return 1
+    
 def main():
     pattern = sys.argv[2]
     input_line = sys.stdin.read()
@@ -30,10 +37,7 @@ def main():
 
     # Uncomment this block to pass the first stage
     if pattern.count('\\') > 1:
-        digits = pattern.count('\\d')
-        letters = pattern.count('\\w')
-        print(digits, letters)
-            
+        exit(combined_char(input, pattern))            
     elif pattern.startswith('\\') or re.search("^\[.*\]$", pattern):
         exit(match_d_an_cg(input_line, pattern))
     elif match_pattern(input_line, pattern):
