@@ -15,6 +15,7 @@ def match_digits(input_line):
     return 0 if re.search ("[0-9]", input_line) else 1
 
 def match_alphanumeric(input_line):
+    print(re.search ("[a-zA-Z0-9_]", input_line))
     return 0 if re.search ("[a-zA-Z0-9_]", input_line) else 1
 
 
