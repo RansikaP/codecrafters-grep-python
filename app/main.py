@@ -37,7 +37,7 @@ def main():
     print("Logs from your program will appear here!")
 
     # Uncomment this block to pass the first stage
-    if re.search('\\\{d}', pattern):
+    if re.search('\\\d', pattern):
         print('here')
     elif pattern.count('\\') > 1:
         exit(combined_char(input_line, pattern))
