@@ -33,6 +33,9 @@ def main():
         for i, c in enumerate(pattern):
             if c == '\\':
                 print(c + pattern[i+1])
+                [next(pattern, None) for _ in range(1)]
+            if c == 'd':
+                print('not skipping')
     elif pattern.startswith('\\') or re.search("^\[.*\]$", pattern):
         exit(match_d_an_cg(input_line, pattern))
     elif match_pattern(input_line, pattern):
