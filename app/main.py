@@ -21,6 +21,12 @@ def combined_char(input, pattern):
             return 1
     
     return 0
+
+def backreference(input, pattern):
+    patterns = pattern.split(' ')
+    print(patterns[0][1:len(patterns-1)])
+    matches = re.findall(patterns[0][1:len(patterns-1)])
+    print(len(matches))
     
 def main():
     pattern = sys.argv[2]
@@ -38,7 +44,7 @@ def main():
 
     # Uncomment this block to pass the first stage
     if pattern.startswith('('):
-        print('here')
+        exit(backreference(input_line, pattern))
     elif pattern.count('\\') > 1:
         exit(combined_char(input_line, pattern))
     else:
