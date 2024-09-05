@@ -18,7 +18,7 @@ def combined_char(input, pattern):
     digits = pattern.count('\\d')
     input_n = input
     if digits > 0:        
-        if not re.search(f'\\d{{{digits}}}', pattern):
+        if not re.search(f'\\d{{{digits}}}', input):
             return 1
         digits = r'\\d' + '{' + digits + '}'
         input_n = re.sub(digits, '', input_n)
