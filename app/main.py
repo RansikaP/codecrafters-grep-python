@@ -15,9 +15,10 @@ def match_digits(input_line):
     return 0 if re.search ("[0-9]", input_line) else 1
 
 def match_alphanumeric(input_line):
-    print(re.search ("[a-zA-Z0-9_]", input_line))
     return 0 if re.search ("[a-zA-Z0-9_]", input_line) else 1
 
+def match_positive_char_group(input, pattern):
+    return 0 if re.search(pattern, input) else 1
 
 def main():
     pattern = sys.argv[2]
@@ -38,6 +39,8 @@ def main():
         exit(match_digits(input_line))
     elif pattern == '\\w':
         exit(match_alphanumeric(input_line))
+    elif re.search("^[.*]$"):
+        exit(match_positive_char_group(input_line, pattern))
     elif match_pattern(input_line, pattern):
         exit(0)
     else:
