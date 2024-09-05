@@ -27,7 +27,11 @@ def backreference(input, pattern):
     ref = patterns[0][1:]
     count = re.findall(r'\\\d+', pattern)[0]
     count = count[1:]
-    print(count)
+
+    pattern_split = pattern.split(',')
+    input_split = input.split(',')
+    if pattern_split[1] != input_split[0]
+        return 1
 
     matches = re.findall(ref, input)
     print(matches)
