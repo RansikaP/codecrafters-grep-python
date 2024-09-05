@@ -41,7 +41,7 @@ def backreference(input, pattern):
     matches = re.findall(ref, input)
     if pattern[-1] == '$':
         print(ref)
-        if not re.match(ref, input):
+        if not re.match(ref[1:], input):
             return 1
 
 
