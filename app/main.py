@@ -21,6 +21,8 @@ def combined_char(input, pattern):
     if digits > 0 and match_d_an_cg('\d' + '{' + digits + '}', input) == 1:
         return 1
     
+    return 0
+    
 def main():
     pattern = sys.argv[2]
     input_line = sys.stdin.read()
