@@ -23,13 +23,14 @@ def combined_char(input, pattern):
     return 0
 
 def backreference(input, pattern):
-    patterns = pattern.split(' ')
-    matches = re.findall(patterns[0][1:len(patterns[0])-1], input)
-    print(matches)
-    print(int(patterns[2][1:]), len(matches) + 1)
-    if int(patterns[2][1:]) + 1 == len(matches):
-        return 0
-    else: return 1
+    word_ref = pattern.split(')')
+    word_ref = word_ref[0].translate(None, '(')
+    print(word_ref)
+
+    # matches = re.findall(patterns[0][1:len(patterns[0])-1], input)
+    # if int(patterns[2][1:]) + 1 == len(matches):
+    #     return 0
+    # else: return 1
     
 def main():
     pattern = sys.argv[2]
