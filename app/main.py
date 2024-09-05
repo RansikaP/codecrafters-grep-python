@@ -28,11 +28,12 @@ def backreference(input, pattern):
     count = re.findall(r'\\\d+', pattern)[0]
     count = count[1:]
 
-    pattern_split = pattern.split(',')
-    input_split = input.split(',')
+    if (pattern.contains(',')):
+        pattern_split = pattern.split(',')
+        input_split = input.split(',')
 
-    if pattern_split[1] != input_split[0]:
-        return 1
+        if pattern_split[1] != input_split[1]:
+            return 1
 
     matches = re.findall(ref, input)
     print(matches)
