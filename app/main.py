@@ -14,6 +14,9 @@ def match_pattern(input_line, pattern):
 def match_digits(input_line):
     return 0 if re.search ("[0-9]", input_line) else 1
 
+def match_alphanumeric(input_line):
+    return 0 if re.search ("[a-zA-Z0-9]", input_line) else 1
+
 
 def main():
     pattern = sys.argv[2]
@@ -29,6 +32,8 @@ def main():
     # Uncomment this block to pass the first stage
     if pattern == '\d':
         exit(match_digits(input_line))
+    elif pattern == '\w':
+        match_alphanumeric(input_line)
     elif match_pattern(input_line, pattern):
         exit(0)
     else:
