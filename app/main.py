@@ -30,12 +30,14 @@ def backreference(input, pattern):
     count = count[1:]
 
     if ',' in pattern:
-        pattern_split = pattern.split(',')[1]
+        pattern_split = pattern.split(',')[1].split(' ')
         input_split = input.split(',')[1].split(' ')
-
-        for i in input_split:
-            if combined_char(i, pattern_split) == 1:
-                return 1
+        
+        if len(input_split) == len(pattern_split):
+            for i in range(len(input_split)):
+                if match_d_an_cg(input_split(i), pattern_split(i)) == 1:
+                    return 1
+            
 
     matches = re.findall(ref, input)
     print(matches)
