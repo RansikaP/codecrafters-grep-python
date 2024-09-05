@@ -37,7 +37,7 @@ def main():
     if pattern == '\\d':
         exit(match_digits(input_line))
     elif pattern == '\\w':
-        match_alphanumeric(input_line)
+        exit(match_alphanumeric(input_line))
     elif match_pattern(input_line, pattern):
         exit(0)
     else:
