@@ -30,7 +30,8 @@ def backreference(input, pattern):
 
     pattern_split = pattern.split(',')
     input_split = input.split(',')
-    if pattern_split[1] != input_split[0]
+
+    if pattern_split[1] != input_split[0]:
         return 1
 
     matches = re.findall(ref, input)
