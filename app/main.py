@@ -30,10 +30,11 @@ def main():
 
     # Uncomment this block to pass the first stage
     if pattern.count('\\') > 1:
-        for i, c in enumerate(pattern):
+        enu = enumerate(pattern)
+        for i, c in enu:
             if c == '\\':
                 print(c + pattern[i+1])
-                [next(pattern, None) for _ in range(1)]
+                [next(enu, None) for _ in range(1)]
             if c == 'd':
                 print('not skipping')
     elif pattern.startswith('\\') or re.search("^\[.*\]$", pattern):
