@@ -40,7 +40,7 @@ def main():
     # Uncomment this block to pass the first stage
     if pattern.count('\\') > 1:
         exit(combined_char(input_line, pattern))
-    elif pattern.startswith('\\') or re.search("^\[.*\]$", pattern) or pattern.startswith('^'):
+    elif pattern.startswith('\\') or re.search("^\[.*\]$", pattern) or pattern.startswith('^') or pattern.endswith('$'):
         exit(match_d_an_cg(input_line, pattern))
     elif match_pattern(input_line, pattern):
         exit(0)
