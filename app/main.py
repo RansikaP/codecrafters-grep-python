@@ -34,9 +34,9 @@ def main():
     print("Logs from your program will appear here!")
 
     # Uncomment this block to pass the first stage
-    if pattern == '\d':
+    if pattern == '\\d':
         exit(match_digits(input_line))
-    elif pattern == '\w':
+    elif pattern == '\\w':
         match_alphanumeric(input_line)
     elif match_pattern(input_line, pattern):
         exit(0)
