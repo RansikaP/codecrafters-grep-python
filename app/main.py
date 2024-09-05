@@ -30,17 +30,9 @@ def main():
 
     # Uncomment this block to pass the first stage
     if pattern.count('\\') > 1:
-        j = 0
-        enu = enumerate(pattern)
-        for i, c in enu:
-            if c == '\\':
-                print(c + pattern[i+1])
-                print(c+pattern[i+1])
-                print(pattern[j])
-                if not match_d_an_cg(c+pattern[i+1], pattern[j]):
-                    exit(1)
-                [next(enu, None) for _ in range(1)]
-                j += 1
+        digits = pattern.count('\\d')
+        letters = pattern.count('\\w')
+        print(digits, letters)
             
     elif pattern.startswith('\\') or re.search("^\[.*\]$", pattern):
         exit(match_d_an_cg(input_line, pattern))
