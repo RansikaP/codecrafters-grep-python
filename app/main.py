@@ -15,12 +15,15 @@ def match_d_an_cg(input, pattern):
     return 0 if re.search (pattern, input) else 1
 
 def combined_char(input, pattern):
-    digits = '\\d' + '{' + str(pattern.count('\\d')) + '}'
-    letters = '\\d' + '{' + str(pattern.count('\\w')) + '}'
-    rest_of_input = re.sub(digits + letters, '', input)
-    print(rest_of_input)
-    if pattern.count('\\d') > 0 and match_d_an_cg('\d' + '{' + digits + '}', input) == 1:
-        return 1
+    digits = r'\\d' + '{' + str(pattern.count('\\d')) + '}'
+    letters = r'\\d' + '{' + str(pattern.count('\\w')) + '}'
+    input_n = input
+    if pattern.count('\\d') > 0:
+        digits = r'\\d' + '{' + str(pattern.count('\\d')) + '}'
+        if not re.search(digits, input):
+            return 1
+        input_n = re.sub(digits, '', input_n)
+        print(input_n)
     
     return 0
     
