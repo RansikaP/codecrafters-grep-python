@@ -36,11 +36,9 @@ def backreference(input, pattern):
         if len(input_split) == len(pattern_split):
             for i in range(len(input_split)):
                 if match_d_an_cg(input_split[i], pattern_split[i]) == 1:
-                    return 1
-            
+                    return 1            
 
     matches = re.findall(ref, input)
-    print(matches)
     if int(count) + 1 == len(matches):
         return 0
     else: return 1
@@ -60,7 +58,7 @@ def main():
     print("Logs from your program will appear here!")
 
     # Uncomment this block to pass the first stage
-    if pattern.startswith('('):
+    if pattern.startswith('(') or pattern.startswith('^('):
         exit(backreference(input_line, pattern))
     elif pattern.count('\\') > 1:
         exit(combined_char(input_line, pattern))
