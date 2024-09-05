@@ -22,6 +22,9 @@ def main():
     pattern = sys.argv[2]
     input_line = sys.stdin.read()
 
+    print('pattern: ', pattern)
+    print('input_line: ', input_line)
+
     if sys.argv[1] != "-E":
         print("Expected first argument to be '-E'")
         exit(1)
