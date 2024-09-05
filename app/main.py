@@ -30,13 +30,15 @@ def main():
 
     # Uncomment this block to pass the first stage
     if pattern.count('\\') > 1:
-        print('here')
+        for c in pattern:
+            if c == '\\':
+                print(c.next())
     elif pattern.startswith('\\') or re.search("^\[.*\]$", pattern):
         exit(match_d_an_cg(input_line, pattern))
     elif match_pattern(input_line, pattern):
         exit(0)
-    else:
-        exit(1)
+    
+    exit(1)
 
 
 if __name__ == "__main__":
