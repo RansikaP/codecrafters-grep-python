@@ -12,7 +12,7 @@ def match_pattern(input_line, pattern):
         raise RuntimeError(f"Unhandled pattern: {pattern}")
 
 def match_digits(input_line):
-    if re.search("0-9", input_line):
+    if re.search("[0-9]", input_line):
         return 1
     else:
         return 0
