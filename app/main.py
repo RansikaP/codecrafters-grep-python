@@ -24,8 +24,8 @@ def combined_char(input, pattern):
 
 def backreference(input, pattern):
     patterns = pattern.split(' ')
-    print(patterns[0][1:len(patterns-1)])
-    matches = re.findall(patterns[0][1:len(patterns-1)])
+    print(patterns[0][1:len(patterns[0])-1])
+    matches = re.findall(patterns[0][1:len(patterns[0])-1])
     print(len(matches))
     
 def main():
