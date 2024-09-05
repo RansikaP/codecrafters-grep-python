@@ -1,4 +1,5 @@
 import sys
+import re
 
 # import pyparsing - available if you need it!
 # import lark - available if you need it!
@@ -9,6 +10,12 @@ def match_pattern(input_line, pattern):
         return pattern in input_line
     else:
         raise RuntimeError(f"Unhandled pattern: {pattern}")
+
+def match_digits(input_line):
+    if re.search("0-9", input_line):
+        return 1
+    else:
+        return 0
 
 
 def main():
@@ -23,7 +30,9 @@ def main():
     print("Logs from your program will appear here!")
 
     # Uncomment this block to pass the first stage
-    if match_pattern(input_line, pattern):
+    if pattern == '/d':
+        exit(match_digits)
+    elif match_pattern(input_line, pattern):
         exit(0)
     else:
         exit(1)
