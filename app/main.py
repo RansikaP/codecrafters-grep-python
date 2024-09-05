@@ -31,10 +31,11 @@ def backreference(input, pattern):
 
     if ',' in pattern:
         pattern_split = pattern.split(',')[1]
-        input_split = input.split(',')[1]
+        input_split = input.split(',')[1].split(' ')
 
-        if combined_char(input_split, pattern_split) == 1:
-            return 1
+        for i in input_split:
+            if combined_char(i, pattern_split) == 1:
+                return 1
 
     matches = re.findall(ref, input)
     print(matches)
