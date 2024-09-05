@@ -16,7 +16,6 @@ def match_d_an_cg(input, pattern):
 
 def combined_char(input, pattern):
     patterns = pattern.split(' ')
-    print(patterns)
     for p in patterns:
         if not re.search(p, input):
             return 1
@@ -40,10 +39,11 @@ def main():
     # Uncomment this block to pass the first stage
     if pattern.count('\\') > 1:
         exit(combined_char(input_line, pattern))
-    elif pattern.startswith('\\') or re.search("^\[.*\]$", pattern) or pattern.startswith('^') or pattern.endswith('$'):
+    # else pattern.startswith('\\') or re.search("^\[.*\]$", pattern) or pattern.startswith('^') or pattern.endswith('$'):
+    else:
         exit(match_d_an_cg(input_line, pattern))
-    elif match_pattern(input_line, pattern):
-        exit(0)
+    # elif match_pattern(input_line, pattern):
+    #     exit(0)
     
     exit(1)
 
