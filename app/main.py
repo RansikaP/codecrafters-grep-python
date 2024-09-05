@@ -26,7 +26,9 @@ def backreference(input, pattern):
     patterns = pattern.split(' ')
     print(patterns[0][1:len(patterns[0])-1])
     matches = re.findall(patterns[0][1:len(patterns[0])-1], input)
-    print(len(matches))
+    if int(patterns[2]) == matches.count + 1:
+        return 0
+    else: return 1
     
 def main():
     pattern = sys.argv[2]
