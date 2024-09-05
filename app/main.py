@@ -39,6 +39,12 @@ def backreference(input, pattern):
                     return 1            
 
     matches = re.findall(ref, input)
+    if pattern[-1] == '$':
+        patterns = pattern.split(' ')
+        if re.match(patterns[-1], ref):
+            return 1
+
+
     if '^' not in ref:
         count += 1
     if count == len(matches):
