@@ -25,7 +25,8 @@ def combined_char(input, pattern):
 def backreference(input, pattern):
     patterns = pattern.split(')')
     ref = patterns[0][1:]
-    count = re.findall(r'\\\d', pattern)[0]
+    count = re.findall(r'\\\d+', pattern)[0]
+    count = count[1:]
     print(count)
 
     matches = re.findall(ref, input)
