@@ -13,9 +13,9 @@ def match_pattern(input_line, pattern):
 
 def match_digits(input_line):
     if re.search("[0-9]", input_line):
-        return 1
-    else:
         return 0
+    else:
+        return 1
 
 
 def main():
