@@ -29,8 +29,8 @@ def backreference(input, pattern):
     count = count[1:]
 
     if ',' in pattern:
-        pattern_split = pattern.split(',')
-        input_split = input.split(',')
+        pattern_split = pattern.split(',')[1]
+        input_split = input.split(',')[1]
 
 
         if combined_char(input_split, pattern_split) == 1:
