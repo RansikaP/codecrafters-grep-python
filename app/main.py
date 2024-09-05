@@ -17,7 +17,9 @@ def match_d_an_cg(input, pattern):
 def combined_char(input, pattern):
     digits = pattern.count('\\d')
     input_n = input
-    if digits > 0:        
+    if digits > 0:
+        s = f'\\d{{{digits}}}'
+        print(s.__class__)
         if not re.search(f'\\d{{{digits}}}', input):
             return 1
         digits = r'\\d' + '{' + digits + '}'
