@@ -43,12 +43,13 @@ def backreference(input, pattern):
     if pattern[-1] == '$':
         ref_end = ref[1:] + '$'
         print(ref_end)
-        if not re.match(ref_end, input):
+        if re.match(ref_end, input) == 0:
             return 1
 
 
     if '^' not in ref:
         count += 1
+    
     if count == len(matches):
         return 0
     else: return 1
