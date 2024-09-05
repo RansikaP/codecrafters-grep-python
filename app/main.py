@@ -11,16 +11,10 @@ def match_pattern(input_line, pattern):
     else:
         raise RuntimeError(f"Unhandled pattern: {pattern}")
 
-def match_digits(input_line):
-    return 0 if re.search ("\d", input_line) else 1
-
-def match_alphanumeric(input_line):
-    return 0 if re.search ("[a-zA-Z0-9_]", input_line) else 1
-
 def match_positive_char_group(input, pattern):
     return 0 if re.search(pattern, input) else 1
 
-def match_d_an(input, pattern):
+def match_d_an_cg(input, pattern):
     return 0 if re.search (pattern, input) else 1
 
 def main():
@@ -38,10 +32,8 @@ def main():
     print("Logs from your program will appear here!")
 
     # Uncomment this block to pass the first stage
-    if pattern.startswith('\\'):
-        exit(match_d_an(input_line, pattern))
-    elif re.search("^\[.*\]$", pattern):
-        exit(match_positive_char_group(input_line, pattern))
+    if pattern.startswith('\\') or re.search("^\[.*\]$", pattern):
+        exit(match_d_an_cg(input_line, pattern))
     elif match_pattern(input_line, pattern):
         exit(0)
     else:
