@@ -13,8 +13,10 @@ def match_pattern(input_line, pattern):
 
 def match_digits(input_line):
     if re.search("[0-9]", input_line):
+        print('2')
         return 0
     else:
+        print('3')
         return 1
 
 
@@ -31,7 +33,8 @@ def main():
 
     # Uncomment this block to pass the first stage
     if pattern == '\d':
-        exit(match_digits)
+        print('here')
+        exit(match_digits(input_line))
     elif match_pattern(input_line, pattern):
         exit(0)
     else:
