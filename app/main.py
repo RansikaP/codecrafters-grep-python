@@ -20,7 +20,7 @@ def combined_char(input, pattern):
     if digits > 0:
         s = f'\\d{{{digits}}}'
         print(s.__class__)
-        if not re.search(f'\\d{{{digits}}}', input):
+        if not re.search(s, input):
             return 1
         digits = r'\\d' + '{' + digits + '}'
         input_n = re.sub(digits, '', input_n)
