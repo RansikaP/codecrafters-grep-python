@@ -39,7 +39,7 @@ def main():
         exit(match_digits(input_line))
     elif pattern == '\\w':
         exit(match_alphanumeric(input_line))
-    elif re.search("^[.*]$"):
+    elif re.search("^[.*]$", pattern):
         exit(match_positive_char_group(input_line, pattern))
     elif match_pattern(input_line, pattern):
         exit(0)
