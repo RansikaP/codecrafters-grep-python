@@ -40,9 +40,8 @@ def backreference(input, pattern):
 
     matches = re.findall(ref, input)
     if pattern[-1] == '$':
-        patterns = pattern.split(' ')
         print(patterns[-1])
-        if not re.match(patterns[-1], ref):
+        if not re.match(input, ref):
             return 1
 
 
